@@ -11,7 +11,6 @@ export default async function Command() {
     if (clipboardText.startsWith("{") || clipboardText.startsWith("[")) {
       result = JSON.stringify(clipboardText, null, 2);
       await showToast({ style: Toast.Style.Success, title: "Stringified JSON" });
-
     } else {
       result = JSON.parse(clipboardText);
       await showToast({ style: Toast.Style.Success, title: "Parsed JSON" });
@@ -24,7 +23,4 @@ export default async function Command() {
     });
     return;
   }
-  
 }
-
-
